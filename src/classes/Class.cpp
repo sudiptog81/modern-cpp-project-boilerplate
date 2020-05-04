@@ -1,5 +1,3 @@
-#include <nlohmann/json.hpp>
-
 #include "Class.h"
 
 const char *Class::getVersion()
