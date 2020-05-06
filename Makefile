@@ -1,7 +1,9 @@
 all:
-	cmake -S . -B build -DCMAKE_TOOLCHAIN_FILE=C:/VCPKG/scripts/buildsystems/vcpkg.cmake
-	cmake --build build
+	cmake -S . -B build
+	cmake --build build --config Release -- -nologo -v:m
+conan:
+	conan install -if build -b missing .
 clean:
 	rmdir /q /s build
 run:
-	./build/Debug/example
+	./build/bin/main
